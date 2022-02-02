@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "name")
+@Table(name = "user")
 public class User {
 
 	@Id
@@ -21,14 +21,17 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "jan")
+	private Long jan;
+	
+	@Column(name = "manufacturer")
+	private String manufacturer;
+	
 	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "address")
-	private String address;
-	
-	@Column(name = "phone")
-	private String phone;
+	@Column(name = "expiration")
+	private Long expiration;
 	
 	@Column(name = "update_date")
 	private Date updateDate;
@@ -36,8 +39,7 @@ public class User {
 	@Column(name = "create_date")
 	private Date createDate;
 	
-	@Column(name = "delete_date")
-	private Date deleteDate;
+
 	
 	
 }
