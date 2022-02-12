@@ -88,6 +88,11 @@ public String update(@Validated @ModelAttribute UserUpdateRequest userUpdateRequ
   return String.format("redirect:/user/%d", userUpdateRequest.getId());
 }
 
+@GetMapping("/user/{id}/delete")
+public String delete(@PathVariable Long id, Model model) {
+  userService.delete(id);
+  return "redirect:/user/list";
+}
 
 
 
