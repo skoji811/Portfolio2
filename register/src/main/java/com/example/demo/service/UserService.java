@@ -48,4 +48,9 @@ public void update(UserUpdateRequest userUpdateRequest) {
     user.setUpdateDate(new Date());
     userRepository.save(user);
   }
+
+public void delete(Long id) {
+	User user = findById(id);
+	userRepository.delete(user);
+}
 }
